@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const { RedisStore } = require('connect-redis'); // ✅ Correct for v8+
 const { createClient } = require('redis');
+const lusca = require('lusca');
 
 const authRoutes = require('./routes/authRoutes');
 const parentRoutes = require('./routes/parentRoutes');
@@ -45,6 +46,7 @@ app.use(
     },
   })
 );
+app.use(lusca.csrf());
 
 app.use(cors({
   origin: 'http://localhost:8081', // or your frontend URL
