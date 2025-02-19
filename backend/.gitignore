@@ -5,3 +5,5 @@ npm-debug.log
 .firestore/
 .vscode/
 .idea/
+
+src/config/firebaseconfig.json
